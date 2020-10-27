@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="panel col-md-6 offset-md-3">
+        <div class="card card-default card-primary">
+            <div class="card-header">
+                <h4>انتخاب سطوح دسترسی برای ادمین </h4>
+            </div>
+            <div class="card-body">
+                <div class="form">
+                    <ng-select [items]="accesslevel" bindLabel="access" appendTo="body" [multiple]="true"
+                        [(ngModel)]="selected">
+                    </ng-select>
+                </div>
+                <button (click)="getSelectedValue()">انتخاب سطح دسترسی</button>
+
+            </div>
+        </div>
+    </div>
+</div>

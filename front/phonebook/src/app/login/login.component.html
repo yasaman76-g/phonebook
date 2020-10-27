@@ -1,0 +1,24 @@
+<div class="body">
+    <div class="container">
+        <div class="col-md-6 offset-md-3" id="form">
+
+            <form #f="ngForm" (ngSubmit)="login(f)" autocomplete="off">
+                <div class="form-group ">
+                    <span>ایمیل :</span>
+                    <input type="text" required ngModel autocomplete="off" class="form-control" id="username"
+                        placeholder="ایمیل " name="email">
+                </div>
+                <div class="form-group">
+                    <span>رمز عبور:</span>
+                    <input type="password" required ngModel autocomplete="off" class="form-control" id="password"
+                        placeholder="رمز عبور" name="password">
+                </div>
+
+                <button type="submit" class="btn" id="btn" [disabled]="!f.valid">ورود</button>
+                <div *ngIf="errormode" class="alert alert-danger" role="alert">
+                    {{errormessage}}
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

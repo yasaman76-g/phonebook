@@ -1,0 +1,41 @@
+.body{
+   height: 100%;
+    background-color: rgb(81, 81, 114);
+    background-size: cover;
+}
+.container{
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+.container.col-md-6.offset-md-3#form{
+    float:right;
+    direction: rtl;
+}
+span{
+    float:right;
+    direction: rtl;
+}
+#btn{
+    
+    background-color: #49436e;
+    color: white;
+    cursor: pointer;
+}
+input{
+    background-color: rgba(178, 223, 206, 0.87);
+    color:black;
+    border-bottom-style: outset;
+  }
+  input:focus {
+    border: 3px solid #49436e;
+  }
+  #form{
+      direction: rtl;
+    border-radius: 15px;
+    background-color: #f2f2f2;
+    padding-top: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
