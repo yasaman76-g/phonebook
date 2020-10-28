@@ -12,53 +12,84 @@
     </div>
 </div>
 <div class="container">
-    <div class="content col-md-10 offset-md-1">
-        <div class="row col-md-12">
+    <div class="row">
+        <div class="content col-md-9">
             <div class="col-md-3">
                 <h4>{{name}}</h4>
             </div>
-            <div class="col-md-1">
-                <button id="btn" type="button" (click)="edituser(id)" class="btn btn-outline-warning">ویرایش</button>
+            <div class="row col-md-10">
+                <div class="col-md-1">
+                    <button id="btn" type="button" (click)="edituser(id)"
+                        class="btn btn-outline-warning">ویرایش</button>
 
-            </div>
-            <div class="col-md-1">
-                <button id="btn" type="button" class="btn btn-outline-dark"><a
-                        [routerLink]="['/logout']">خروج</a></button>
+                </div>
+                <div class="col-md-2">
+                    <button id="btn" type="button" class="btn btn-outline-dark"><a
+                            [routerLink]="['/logout']">خروج</a></button>
 
-            </div>
-            <br>
-        </div>
-        <div class="user col-md-12">
-            <hr>
-            <ul style="list-style-type:none" *ngFor="let contact of contacts">
-                <li style="cursor: pointer;">{{contact.name}}<br>
-                    <div class="row col-md-12">
-                        <div *ngIf="addadmin && contact.scope!=1" class="col-md-1">
-                            <button type="button" class="btn btn-outline-dark"
-                                (click)="admin(contact.id)">ادمین</button>
-                        </div>
-                        <div *ngIf="remove" class="col-md-1">
-                            <button type="button" class="btn btn-outline-danger"
-                                (click)="deleteuser(contact.id)">حذف</button>
-                        </div>
-                        <div *ngIf="updateuser" class="col-md-1">
-                            <button type="button" class="btn btn-outline-warning"
-                                (click)="edituser(contact.id)">ویرایش</button>
-                        </div>
-                        <div class="col-md-1">
-                            <button type="button" class="btn btn-outline-dark"
-                                (click)="details(contact.name)">جزئیات</button>
-                        </div>
-                    </div>
-                </li>
+                </div>
+                <div class="add" class="col-md-4" *ngIf="addmode">
+                    <button type="button" id="add" class="btn btn-outline-dark btn-lg"><a
+                            [routerLink]="['/signupform']">افزودن
+                            مخاطب</a></button>
+
+                </div>
                 <br>
-            </ul>
-        </div>
-        <div class="add" class="col-md-6" *ngIf="addmode">
-            <button type="button" id="add" class="btn btn-outline-dark btn-lg"><a [routerLink]="['/signupform']">افزودن
-                    مخاطب</a></button>
+            </div>
+            <div class="user col-md-10">
+                <hr>
+                <ul style="list-style-type:none" *ngFor="let contact of contacts">
+                    <li>{{contact.name}}</li>
+                    <br>
+                    <li style="cursor: pointer;">
+                        <div class="row">
+                            <div *ngIf="addadmin && contact.scope!=1" class="col-md-2">
+                                <button type="button" class="btn btn-outline-dark"
+                                    (click)="admin(contact.id)">ادمین</button>
+                            </div>
+                            <div *ngIf="remove" class="col-md-2">
+                                <button type="button" class="btn btn-outline-danger"
+                                    (click)="deleteuser(contact.id)">حذف</button>
+                            </div>
+                            <div *ngIf="updateuser" class="col-md-2">
+                                <button type="button" class="btn btn-outline-warning"
+                                    (click)="edituser(contact.id)">ویرایش</button>
+                            </div>
+                            <div class="col-md-2">
+                                <button type="button" class="btn btn-outline-dark"
+                                    (click)="details(contact.name)">جزئیات</button>
+                            </div>
+                        </div>
+                    </li>
+                    <br>
+                </ul>
+            </div>
 
+        </div>
+        <div class="sidebar col-md-3">
+            <div class="card text-white  mb-3" style="max-width: 18rem;">
+                <div class="card-header bg-primary" style="text-align: center;font-style: italic;">
+                    <h5>جستوجوی پیشرفته</h5>
+                </div>
+                <div class="card-body">
+                    <form #form="ngForm" (ngSubmit)="advancesearch(form)">
+                        <div class="form-group">
+                            <span dir="rtl" class="col-md-12"
+                                style="color: black;float: right;text-align: right;">ایمیل:</span>
+                            <input type="text" class="form-control" placeholder="Search" ngModel required name="email">
+                        </div>
+                        <div class="form-group">
+                            <span dir="rtl" class="col-md-12" style="color: black;float: right;text-align: right;">شماره
+                                تماس:</span>
+                            <input type="text" class="form-control" placeholder="Search" ngModel required
+                                name="phonenumber">
+                        </div>
+                        <button class="btn btn-default btn-light" type="submit">
+                            جست و جو
+                        </button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-
 </div>

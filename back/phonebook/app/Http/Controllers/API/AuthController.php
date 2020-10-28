@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Models\Phone; 
 use App\Models\Admin; 
-use App\Models\Accesslevel;  
+use App\Models\Accesslevel; 
+use Illuminate\Support\Facades\DB; 
 use Validator;
 class AuthController extends Controller
 {
@@ -42,7 +43,7 @@ class AuthController extends Controller
   { 
     $postArray = $request->all(); 
     $validator = Validator::make($request->all(), [ 
-      'name' => 'required|unique:users',
+      'name' => 'required',
       'phone' => 'required',
       'password' => 'required|max:6|min:6',  
       'email' => 'required|email|unique:users',
@@ -100,7 +101,17 @@ User::where('id',$postArray['id'])->delete();
 }
 public function searchuser(Request $request){
   $postArray=$request->all();
-  $res=User::where('name', 'LIKE', '%'.$postArray['name'].'%')->where('name', '!=', $postArray['user'])->get();;
+  $res=User::where('name', 'LIKE', '%'.$postArray['name'].'%')->where('name', '!=', $postArray['user'])->get();
+  return json_encode($res);
+}
+public function advancesearch(Request $request){
+  $postArray=$request->all();
+    $res=DB::select('select users.name,users.id 
+    from `users` right join `phones`
+    on users.id=phones.refid 
+    where  email = ? or phonenumber = ?
+    group by users.name,users.id',[$postArray['email'],$postArray['phonenumber']]);
+   
   return json_encode($res);
 }
 public function showuser(Request $request){

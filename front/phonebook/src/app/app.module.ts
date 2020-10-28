@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { SignupformComponent } from './signupform/signupform.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
-import { HomepageComponent } from './homepage/homepage.component';
 import { CookieService } from 'ngx-cookie-service';
 import { AuthGaurd } from './shared/service/auth-gaurd';
 import { AuthGaurdService } from './shared/service/auth-gaurd.service';
@@ -15,6 +14,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { DetailsComponent } from './details/details.component';
 import { LogoutComponent } from './logout/logout.component';
 import { ShowuserComponent } from './showuser/showuser.component';
+import { HomepageComponent } from './homepage/homepage.component';
 @NgModule({
   declarations: [
     AppComponent,

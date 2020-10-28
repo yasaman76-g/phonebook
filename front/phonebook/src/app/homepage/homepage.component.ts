@@ -103,4 +103,20 @@ export class HomepageComponent implements OnInit {
       }
     )
   }
+  advancesearch(form) {
+    const model = {
+      'email': form.value.email,
+      'phonenumber': form.value.phonenumber,
+      'user': this.name
+    }
+    this.httpclient.post("http://localhost/phonebook/public/api/advancesearch", model).subscribe(
+      res => {
+        console.log(res)
+        this.contacts = res;
+      },
+      err => {
+        console.log(err);
+      }
+    )
+  }
 }
