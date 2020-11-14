@@ -1,0 +1,9 @@
+.container.show{
+    float: right;
+    direction: rtl;
+    
+}
+ul{
+    padding-top: 200px;
+    text-align: right;
+}

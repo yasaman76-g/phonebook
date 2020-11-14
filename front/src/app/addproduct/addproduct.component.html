@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="col-md-8 offset-md-2">
+        <div class="form">
+            <form dir="rtl" #f="ngForm" (ngSubmit)="insert(f)">
+                <div class="form-group">
+                    <span>نام بسته:</span>
+                    <input type="text" class="form-control" id="first_name" ngModel name="first_name" required
+                        #first_name="ngModel">
+                    <span class="help-block alert-danger" *ngIf="first_name.invalid && first_name.touched">لطفا
+                        نام بسته را
+                        وارد
+                        کنید</span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <span>ظرفیت بسته :</span>
+                    <input type="number" class="form-control" id="number" ngModel name="number" required
+                        #number="ngModel">
+                    <span class="help-block alert-danger" *ngIf="number.invalid && number.touched">لطفا
+                        ظرفیت بسته را
+                        وارد
+                        کنید</span>
+                </div>
+                <br>
+                <div class="form-group">
+                    <span>قیمت :</span>
+                    <input type="text" class="form-control" id="price" ngModel name="price" required #price="ngModel">
+                    <span class="help-block alert-danger" *ngIf="price.invalid && price.touched">لطفا
+                        قیمت بسته را
+                        وارد
+                        کنید</span>
+                </div>
+                <br>
+                <div class="row">
+                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">ثبت</button>
+                    <br>
+                    <br>
+                    <div *ngIf="errormode" class="alert alert-danger" role="alert">
+                        {{errormessage}}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

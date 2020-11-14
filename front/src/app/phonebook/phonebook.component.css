@@ -1,0 +1,41 @@
+.header{
+    width: 100%;
+    height: 300px;
+    background-image: url('../../assets/img/1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+}
+.container.content{
+    direction: rtl;
+    float:right;
+    text-align: right;
+}
+h4{
+    text-align: right;
+}
+#search{
+    float: right;
+    margin-top:150px;
+    margin-right: 50%;
+    
+}
+.content{
+    margin-top: 50px;
+    height: 500px;
+    border-radius: 5%;
+}
+#btn{
+    margin-top: 20px; 
+    
+}
+a{
+    color: white;
+}
+.user{
+    float: right;
+    direction: rtl;
+    text-align: right;
+    font-size: larger;
+}

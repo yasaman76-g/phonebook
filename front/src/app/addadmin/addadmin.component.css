@@ -1,0 +1,19 @@
+.container.form{
+    float:right;
+    direction: rtl;
+}
+.panel{
+    padding-top: 200px;
+}
+h4{
+   text-align: right;
+}
+.radio.col-md-12{
+    float:right;
+}
+form{
+    text-align: right;
+}
+.btn{
+    float: left;
+}

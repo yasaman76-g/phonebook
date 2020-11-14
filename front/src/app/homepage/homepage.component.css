@@ -1,0 +1,55 @@
+.header{
+    width: 100%;
+    height: 300px;
+    background-image: url('../../assets/img/1.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    background-size: cover;
+}
+.container.content{
+    direction: rtl;
+    float:right;
+}
+#search{
+    float: right;
+    margin-top:150px;
+    margin-right: 50%;
+    
+}
+.row{
+    direction: rtl;
+}
+.content{
+    margin-top: 50px;
+    height: 500px;
+    border-radius: 5%;
+    
+}
+#btn{
+    margin-top: 20px; 
+    
+}
+#add{
+   margin-top: 20px; 
+}
+a{
+    color: white;
+}
+.user{
+    float: right;
+    direction: rtl;
+    text-align: right;
+    font-size: larger;
+}
+.sidebar{
+    margin-top: 100px;
+}
+.even{
+    background-color: rgb(208, 245, 234);
+    border-radius: 5%;
+}
+.odd{
+    background-color: rgb(185, 211, 219);
+    border-radius: 5%;
+}

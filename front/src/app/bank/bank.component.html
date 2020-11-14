@@ -1,0 +1,39 @@
+<div dir="rtl" class="container">
+    <div class="col-md-12">
+        <form>
+            <div>
+                <div>
+                    <span>قیمت :</span>
+                    <input type="text" name="price" ngModel required [(ngModel)]="response.price">
+                </div>
+                <br>
+                <div class="row">
+                    <span> شماره کارت:</span>
+                    <div class="col-xs-1 " id="num4">
+                        <input type="text" name="num4" ngModel required>
+                    </div>
+                    <div class="col-xs-1" id="num3">
+                        <input type="text" name="num3" ngModel required>
+                    </div>
+                    <div class="col-xs-1" id="num2">
+                        <input type="text" name="num2" ngModel required>
+                    </div>
+                    <div class="col-xs-1" id="num1">
+                        <input type="text" name="num1" ngModel required>
+                    </div>
+                </div>
+                <br>
+                <div>
+                    <span> cvv2:</span><input type="text" name="cvv2">
+                </div>
+                <br>
+                <div>
+
+                    <button class="btn btn-success btn-block" (click)="insert(response)">پرداخت</button>
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</div>

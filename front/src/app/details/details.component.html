@@ -1,0 +1,12 @@
+<div class="container col-md-8 offset-md-2">
+    <div class="show">
+        <ul class="list-group">
+            <li class="list-group-item active">{{name}}</li>
+            <li *ngFor="let item of detail" class="list-group-item"><span
+                    class="badge badge-primary badge-pill">{{item.type}}</span> {{item.phonenumber}}
+
+            </li>
+            <li class="list-group-item">{{email}}</li>
+        </ul>
+    </div>
+</div>

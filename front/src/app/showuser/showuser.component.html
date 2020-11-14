@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="col-md-8 offset-md-2">
+        <div class="form">
+            <form dir="rtl" *ngFor="let user of user" #f="ngForm" (ngSubmit)="insert(f)">
+                <div class="form-group">
+                    <span>نام:</span>
+                    <input type="text" class="form-control" id="first_name" ngModel name="first_name"
+                        pattern="^[\u0600-\u06FF\s]+$" required #first_name="ngModel" [(ngModel)]="user.name">
+                    <span class="help-block alert-danger" *ngIf="first_name.invalid && first_name.touched">لطفا
+                        نام خود را
+                        وارد
+                        کنید</span>
+                    <span class="help-block alert-danger"
+                        *ngIf="first_name.invalid && first_name.touched && first_name.errors.pattern">لطفا نام
+                        خود را به
+                        فارسی وارد کنید</span>
+                </div>
+                <div *ngFor="let item of phonenumbers;let i=index;">
+                    <div class="row">
+                        <div class="form-group col-md-3">
+                            <span>تلفن:</span>
+                            <input type="tel" class="form-control" id="phonenumber{{i}}" [(ngModel)]="item.phonenumber"
+                                name="phonenumber{{i}}" #phonenumber="ngModel" required>
+                            <span class="help-block alert-danger"
+                                *ngIf="phonenumber.invalid && phonenumber.touched">لطفا
+                                تلفن خود را
+                                وارد
+                                کنید</span>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <span>نوع:</span>
+                            <select class="form-control" id="type{{i}}" [(ngModel)]="item.type" required
+                                name="type{{i}}">
+                                <option *ngFor="let item of type" value="{{item.value}}">{{item.name}}</option>
+                            </select>
+                        </div>
+                        <div class="col-md-1">
+                            <button id="add" class="material-icons btn" type="button" (click)="add()">
+                                add_circle</button>
+                        </div>
+                        <div class="col-md-1" *ngIf="i!=0">
+                            <button id="remove" class="material-icons btn" type="button" (click)="remove(i)">
+                                remove_circle</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <span>ایمیل:</span>
+                    <input type="email" class="form-control" id="email" ngModel name="email" required email
+                        #email="ngModel" [(ngModel)]="user.email">
+                    <span class="help-block alert-danger"
+                        *ngIf="email.invalid && email.touched && email.errors.email">ایمیل خود را به درستی وارد
+                        کنید</span>
+                    <span class="help-block alert-danger" *ngIf="email.invalid && email.touched">لطفا ایمیل خود
+                        را وارد
+                        کنید
+
+                    </span>
+                </div>
+                <div class="row">
+                    <button class="btn btn-primary" type="submit" [disabled]="!f.valid">ثبت</button>
+                    <br>
+                    <br>
+                    <div *ngIf="errormode" class="alert alert-danger" role="alert">
+                        {{errormessage}}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
